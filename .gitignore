@@ -1,0 +1,23 @@
+﻿# .NET
+bin/
+obj/
+*.user
+
+# Node / React
+node_modules/
+dist/
+build/
+
+# Variáveis de ambiente / segredos
+.env
+.env.local
+appsettings.Development.json
+
+# IDE
+.vs/
+.vscode/
+*.suo
+
+# Sistema
+.DS_Store
+Thumbs.db
