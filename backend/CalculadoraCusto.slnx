@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CalculadoraCusto.Api/CalculadoraCusto.Api.csproj" />
+    <Project Path="src/CalculadoraCusto.Application/CalculadoraCusto.Application.csproj" />
+    <Project Path="src/CalculadoraCusto.Domain/CalculadoraCusto.Domain.csproj" />
+    <Project Path="src/CalculadoraCusto.Infrastructure/CalculadoraCusto.Infrastructure.csproj" />
+  </Folder>
+</Solution>
