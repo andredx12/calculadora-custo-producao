@@ -8,6 +8,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
 
+// Repositorios
+builder.Services.AddScoped<CalculadoraCusto.Application.Interfaces.IIngredienteRepository, CalculadoraCusto.Infrastructure.Repositories.IngredienteRepository>();
+
 // CORS - libera o frontend React a consumir a API
 builder.Services.AddCors(options =>
 {
