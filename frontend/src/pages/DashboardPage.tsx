@@ -1,0 +1,3 @@
+﻿export function DashboardPage() {
+  return <h1 className="text-2xl font-bold text-doce-marrom-700 dark:text-white">Dashboard</h1>;
+}

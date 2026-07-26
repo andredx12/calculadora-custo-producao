@@ -1,3 +1,21 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-doce-rosa-50: #fdf2f5;
+  --color-doce-rosa-100: #fce7ec;
+  --color-doce-rosa-200: #f9cedb;
+  --color-doce-rosa-300: #f4a8bd;
+  --color-doce-rosa-400: #ec7699;
+  --color-doce-rosa-500: #e04a78;
+
+  --color-doce-marrom-50: #faf6f2;
+  --color-doce-marrom-100: #f3e9df;
+  --color-doce-marrom-200: #e4cfb8;
+  --color-doce-marrom-300: #cfa87e;
+  --color-doce-marrom-400: #b8895c;
+  --color-doce-marrom-500: #9c6c42;
+  --color-doce-marrom-600: #7d5433;
+  --color-doce-marrom-700: #5f3f27;
+}
