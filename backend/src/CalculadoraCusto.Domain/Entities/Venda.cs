@@ -26,7 +26,7 @@ public class Venda
         QuantidadeVendida = quantidadeVendida;
         PrecoUnitarioVenda = precoUnitarioVenda;
         CustoUnitarioNoMomento = custoUnitarioNoMomento;
-        DataVenda = dataVenda;
+        DataVenda = DateTime.SpecifyKind(dataVenda, DateTimeKind.Utc);
         CriadoEm = DateTime.UtcNow;
     }
 
