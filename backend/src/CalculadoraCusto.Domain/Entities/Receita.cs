@@ -36,6 +36,33 @@ public class Receita
         AtualizadoEm = DateTime.UtcNow;
     }
 
+    public void AtualizarDados(string nome, decimal quantidadeProduzida, string unidadeProduzida, string? descricao, decimal? margemLucroPadrao)
+    {
+        if (string.IsNullOrWhiteSpace(nome))
+            throw new ArgumentException("Nome da receita é obrigatório.");
+        if (quantidadeProduzida <= 0)
+            throw new ArgumentException("Quantidade produzida deve ser maior que zero.");
+
+        Nome = nome.Trim();
+        QuantidadeProduzida = quantidadeProduzida;
+        UnidadeProduzida = unidadeProduzida;
+        Descricao = descricao;
+        MargemLucroPadrao = margemLucroPadrao;
+        AtualizadoEm = DateTime.UtcNow;
+    }
+
+    public void Desativar()
+    {
+        Ativo = false;
+        AtualizadoEm = DateTime.UtcNow;
+    }
+
+    public void Ativar()
+    {
+        Ativo = true;
+        AtualizadoEm = DateTime.UtcNow;
+    }
+
     public void AdicionarIngrediente(ReceitaIngrediente ingrediente)
     {
         _ingredientes.Add(ingrediente);
@@ -52,10 +79,13 @@ public class Receita
         }
     }
 
+    // Soma o custo de todos os ingredientes utilizados
     public decimal CustoTotal => _ingredientes.Sum(i => i.CustoUtilizado);
 
+    // Custo de cada unidade produzida (ex: custo de cada bolo)
     public decimal CustoPorUnidade => QuantidadeProduzida == 0 ? 0 : CustoTotal / QuantidadeProduzida;
 
+    // Preco sugerido de venda, aplicando a margem de lucro (em %)
     public decimal CalcularPrecoVenda(decimal? margemLucro = null)
     {
         var margem = margemLucro ?? MargemLucroPadrao ?? 0;
