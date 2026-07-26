@@ -18,7 +18,7 @@ public class Producao
         Id = Guid.NewGuid();
         ReceitaId = receitaId;
         QuantidadeProduzida = quantidadeProduzida;
-        DataProducao = dataProducao;
+        DataProducao = DateTime.SpecifyKind(dataProducao, DateTimeKind.Utc);
         CriadoEm = DateTime.UtcNow;
     }
 }
