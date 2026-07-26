@@ -10,6 +10,8 @@ public class AppDbContext : DbContext
     public DbSet<Receita> Receitas => Set<Receita>();
     public DbSet<Ingrediente> Ingredientes => Set<Ingrediente>();
     public DbSet<ReceitaIngrediente> ReceitaIngredientes => Set<ReceitaIngrediente>();
+    public DbSet<Producao> Producoes => Set<Producao>();
+    public DbSet<Venda> Vendas => Set<Venda>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
