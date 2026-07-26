@@ -10,6 +10,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Repositorios
 builder.Services.AddScoped<CalculadoraCusto.Application.Interfaces.IIngredienteRepository, CalculadoraCusto.Infrastructure.Repositories.IngredienteRepository>();
+builder.Services.AddScoped<CalculadoraCusto.Application.Interfaces.IReceitaRepository, CalculadoraCusto.Infrastructure.Repositories.ReceitaRepository>();
 
 // CORS - libera o frontend React a consumir a API
 builder.Services.AddCors(options =>
